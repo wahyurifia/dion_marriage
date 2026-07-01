@@ -6,7 +6,7 @@
 
 body {
   min-height: 100vh;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background: linear-gradient(135deg, #ffe4ec 0%, #ffd6e8 40%, #ffc9dd 100%);
   overflow: hidden;
   position: relative;
@@ -44,14 +44,14 @@ body {
   right: 16px;
   z-index: 50;
   border: none;
-  background: rgba(255,255,255,0.7);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(4px);
   width: 44px;
   height: 44px;
   border-radius: 50%;
   font-size: 20px;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
 }
 #sound-toggle:hover {
@@ -69,7 +69,9 @@ body {
   opacity: 0;
   pointer-events: none;
   transform: scale(0.96);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
   z-index: 1;
 }
 
@@ -99,7 +101,7 @@ body {
 }
 
 .title {
-  font-family: 'Great Vibes', cursive;
+  font-family: "Great Vibes", cursive;
   font-size: 52px;
   color: #d63864;
   margin-bottom: 8px;
@@ -135,7 +137,7 @@ body {
 }
 
 .ask-title {
-  font-family: 'Great Vibes', cursive;
+  font-family: "Great Vibes", cursive;
   font-size: 56px;
   color: #d63864;
   margin: 10px 0 18px;
@@ -151,7 +153,8 @@ body {
   min-height: 60px;
 }
 
-.btn-yes, .btn-no {
+.btn-yes,
+.btn-no {
   border: none;
   padding: 14px 28px;
   border-radius: 999px;
@@ -172,8 +175,13 @@ body {
 }
 
 @keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.06); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
 }
 
 .btn-no {
@@ -188,7 +196,9 @@ body {
 .btn-no.escaping {
   position: fixed;
   z-index: 30;
-  transition: top 0.25s ease, left 0.25s ease;
+  transition:
+    top 0.25s ease,
+    left 0.25s ease;
 }
 
 /* answer page: full screen, no card */
@@ -198,37 +208,47 @@ body {
 }
 
 .ring {
-  font-size: 56px;
+  font-size: clamp(28px, 7vw, 56px);
   animation: dropIn 0.8s ease;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
 @keyframes dropIn {
-  0% { transform: translateY(-60px) rotate(-30deg); opacity: 0; }
-  60% { transform: translateY(10px) rotate(10deg); opacity: 1; }
-  100% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  0% {
+    transform: translateY(-60px) rotate(-30deg);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(10px) rotate(10deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
 }
 
 .thanks-title {
-  font-family: 'Great Vibes', cursive;
-  font-size: 58px;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(30px, 8vw, 58px);
   color: #d63864;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   animation: fadeUp 0.8s ease 0.2s both;
 }
 
 .thanks-sub {
-  font-size: 20px;
+  font-size: clamp(13px, 3.4vw, 17px);
   color: #b9425f;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  line-height: 1.4;
   animation: fadeUp 0.8s ease 0.4s both;
 }
 
 .thanks-note {
-  font-size: 14px;
+  font-size: clamp(11px, 2.6vw, 14px);
   color: #6b4453;
-  line-height: 1.7;
+  line-height: 1.5;
   animation: fadeUp 0.8s ease 0.6s both;
 }
 
@@ -241,8 +261,14 @@ body {
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 #confetti-container {
@@ -280,8 +306,20 @@ body {
   gap: 0.6vh;
   padding: 0.6vh 0;
   background: linear-gradient(135deg, #fff0f5, #ffe1ec);
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
 }
 
 .marquee-row {
@@ -311,21 +349,29 @@ body {
 }
 
 @keyframes marqueeLeft {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes marqueeRight {
-  from { transform: translateX(-50%); }
-  to { transform: translateX(0); }
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 /* video carousel — besar, jadi fokus utama layar; horizontal walau sumbernya potret */
 .carousel {
   position: relative;
   z-index: 2;
-  width: min(98vw, 980px);
-  height: min(66vh, 540px);
+  width: min(70vw, 620px);
+  height: min(46vh, 380px);
   border-radius: 24px;
   overflow: hidden;
   background: #000;
@@ -343,8 +389,13 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 24px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.1) 45%, rgba(0, 0, 0, 0.35) 100%);
+  padding: 16px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.1) 45%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
   pointer-events: none;
 }
 
@@ -391,12 +442,27 @@ body {
 }
 
 @media (max-width: 480px) {
-  .title, .ask-title, .thanks-title { font-size: 42px; }
-  .card { padding: 36px 22px; }
-  .carousel { width: min(90vw, 420px); height: min(52vh, 420px); }
-  .thanks-sub { font-size: 17px; }
-  .thanks-note { font-size: 13px; }
-  .marquee-bg { gap: 0.4vh; padding: 0.4vh 0; }
-  .marquee-track { gap: 8px; }
-  .marquee-track img { width: clamp(130px, 42vw, 220px); height: clamp(150px, 23vh, 240px); }
+  .title,
+  .ask-title,
+  .thanks-title {
+    font-size: 32px;
+  }
+  .card {
+    padding: 36px 22px;
+  }
+  .carousel {
+    width: min(80vw, 320px);
+    height: min(38vh, 300px);
+  }
+  .marquee-bg {
+    gap: 0.4vh;
+    padding: 0.4vh 0;
+  }
+  .marquee-track {
+    gap: 8px;
+  }
+  .marquee-track img {
+    width: clamp(130px, 42vw, 220px);
+    height: clamp(150px, 23vh, 240px);
+  }
 }
